@@ -1,5 +1,6 @@
 const express = require('express');
 const exphbs = require('express-handlebars');
+const db = require('./config/connection')
 
 const app = express();
 
@@ -13,48 +14,22 @@ app.use(express.json());
 
 app.use(express.static('public'))
 
-const standInBefore = [
-    {
-        id: 3,
-        type: 'Western Bacon BBQ Burger'
-    },
-    {
-        id: 4,
-        type: 'Beyond Burger'
-    },
-    {
-        id: 5,
-        type: 'Big Mac'
+app.get('/', async function(req, res) {
+    let burgers = {
+        before: await db.query("SELECT id, type FROM burgers WHERE status = 'pending'"),
+        after: await db.query("SELECT id, type FROM burgers WHERE status = 'eaten';")
     }
-];
-
-const standInAfter =[
-    {
-        id: 1,
-        type: 'Veggie Burger'
-    },
-    {
-        id: 2,
-        type: 'Baby you can Chive my Car'
-    }
-]
-
-
-
-app.get('/', function(req, res) {
-    res.render('index', {
-        before: standInBefore,
-        after: standInAfter
-    });
+    res.render('index', burgers);
 })
 
 app.post('/add', function(req, res) {
     console.log(req.body.burger);
-    standInBefore.push({
-        id: 6,
-        type: req.body.burger
+
+    db.query("INSERT INTO burgers (type) VALUES (?)", req.body.burger, function(err) {
+        if(err) throw err;
+        res.redirect('/');
     })
-    res.redirect('/');
+
 })
 
 app.post('/devour/:id', function(req, res) {
