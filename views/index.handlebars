@@ -1,0 +1,36 @@
+
+<header>
+    <p id="burger" alt="Hamburger Emoji">🍔</p>
+    <h1 id="heading">Eat-Da-Burger</h1>
+</header>
+<main>
+    <div class="container">
+        <div class="row">
+              <div class="col-6">
+                <ul id="orderlist">
+                    {{#each before}}
+                    <li>
+                        <p>{{id}} {{type}}<button class="devour">Devour</button></p>
+                    </li>
+                    {{/each}}
+                </ul>
+              </div>
+              <div class="col-6">
+                <ul id='eatenlist'>
+                    {{#each after}}
+                    <li>
+                        <p>{{id}} {{type}}</p>
+                    </li>
+                    {{/each}}
+                </ul>
+              </div>
+        </div>
+    </div>
+    <section id="input">
+        <form id="burgerForm">
+            <input id="burgerInput" type="text">
+            <input id="inputSubmit" type="submit">
+        </form>
+        <p id="burgerText">Enter a burger you would like to eat and Click the Submit button</p>
+    </section>
+</main>
