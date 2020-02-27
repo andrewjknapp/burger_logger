@@ -58,14 +58,17 @@ li {
     height: 50px;
 }
 
-#inputSubmit {
-    display: block;
-    margin: 0 auto;
+button {
     padding: 5px;
     background-color: cornflowerblue;
     border-style: none;
     color: white;
+    cursor: pointer;
+}
 
+#inputSubmit {
+    display: block;
+    margin: 0 auto;
 }
 
 #burgerText {
