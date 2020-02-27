@@ -10,7 +10,7 @@
                 <ul id="orderlist">
                     {{#each before}}
                     <li>
-                        <p>{{id}} {{type}}<button class="devour">Devour</button></p>
+                        <p>{{id}}. {{type}}<button class="devour" identifier="{{id}}">Devour</button></p>
                     </li>
                     {{/each}}
                 </ul>
@@ -19,7 +19,7 @@
                 <ul id='eatenlist'>
                     {{#each after}}
                     <li>
-                        <p>{{id}} {{type}}</p>
+                        <p>{{id}}. {{type}}</p>
                     </li>
                     {{/each}}
                 </ul>
@@ -27,10 +27,10 @@
         </div>
     </div>
     <section id="input">
-        
-            <input id="burgerInput" type="text">
-            <button id="inputSubmit">Submit</button>
-        
+        <form action='/add' method='POST'>
+            <input id="burgerInput" type="text" name="burger">
+            <button id="inputSubmit" type="submit">Submit</button>
+        </form>
         <p id="burgerText">Enter a burger you would like to eat and Click the Submit button</p>
     </section>
 </main>

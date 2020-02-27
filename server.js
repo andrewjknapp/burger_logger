@@ -7,6 +7,10 @@ var PORT = process.env.PORT || 8080;
 
 app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
+
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
+
 app.use(express.static('public'))
 
 const standInBefore = [
@@ -35,11 +39,27 @@ const standInAfter =[
     }
 ]
 
+
+
 app.get('/', function(req, res) {
     res.render('index', {
         before: standInBefore,
         after: standInAfter
     });
+})
+
+app.post('/add', function(req, res) {
+    console.log(req.body.burger);
+    standInBefore.push({
+        id: 6,
+        type: req.body.burger
+    })
+    res.redirect('/');
+})
+
+app.post('/devour/:id', function(req, res) {
+    console.log(req.params.id);
+    res.redirect('/');
 })
 
 app.listen(PORT, function(err) {
