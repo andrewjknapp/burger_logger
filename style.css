@@ -5,11 +5,11 @@
 }
 
 body {
-    background-color: #FFCA60;
+    background-color: #FFCA60 !important;
 }
 
 #burger {
-    font-size: 13em;
+    font-size: 10em;
     margin: 0 auto;
     width: fit-content;
 }
@@ -25,20 +25,17 @@ main {
 }
 
 #ordered, #eaten {
-    column-span: 1;
     min-height: 30px;
     width: 49.2%;
     display: inline-block;
     background-color: darkred;
     height: fit-content;
+    
 }
 
 #orderlist, #eatenlist {
-    position: absolute;
     list-style: none;
     padding: 10px;
-    width: 38.95%;
-    background-color: darksalmon;
 }
 
 .devour {
@@ -51,11 +48,13 @@ li {
     background-color: rgb(231, 231, 231);
     text-align: center;
     padding: 5px;
+    margin: 2px;
 }
 
 #burgerInput {
     display: block;
     margin: 10px auto;
+    width: 300px;
     height: 50px;
 }
 

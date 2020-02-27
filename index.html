@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
     <title>Eat-Da-Burger</title>
 </head>
 <body>
@@ -12,28 +13,29 @@
         <h1 id="heading">Eat-Da-Burger</h1>
     </header>
     <main>
-        <section id="lists">
-            <div id="ordered">
-                <ul id="orderlist">
-                    <li>
-                        <p>Hamburger Future <button class="devour">Devour</button></p>
-                        
-                    </li>
-                    <li>
-                        <p>Hamburger Future <button class="devour">Devour</button></p>
-                        
-                    </li>
-                </ul>
+        <div class="container">
+            <div class="row">
+                  <div class="col-6">
+                    <ul id="orderlist">
+                        <li>
+                            <p>Hamburger Future <button class="devour">Devour</button></p>
+                        </li>
+                        <li>
+                            <p>Hamburger Future <button class="devour">Devour</button></p>
+                        </li>
+                    </ul>
+                  </div>
+                  <div class="col-6">
+                    <ul id=eatenlist>
+                        <li>
+                            <p>Hamburger Past</p>
+                            
+                        </li>
+                    </ul>
+                  </div>
             </div>
-            <div id="eaten">
-                <ul id=eatenlist>
-                    <li>
-                        <p>Hamburger Past</p>
-                        
-                    </li>
-                </ul>
-            </div>
-        </section>
+        </div>
+
         <section id="input">
             <form>
                 <input id="burgerInput" type="text">
@@ -44,15 +46,3 @@
     </main>
 </body>
 </html>
-
-<!-- <ul id="ordered">
-                <li>
-                    <p>Hamburger Future</p>
-                    <button>Devour</button>
-                </li>
-            </ul>
-            <ul id="eaten">
-                <li>
-                    <p>Hamburger Past</p>
-                </li>
-            </ul> -->
