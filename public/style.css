@@ -24,18 +24,24 @@ main {
     margin: 0 auto;
 }
 
-#ordered, #eaten {
-    min-height: 30px;
-    width: 49.2%;
-    display: inline-block;
-    background-color: darkred;
-    height: fit-content;
-    
-}
-
 #orderlist, #eatenlist {
     list-style: none;
     padding: 10px;
+}
+
+#orderlist li {
+    padding: 5px;
+    margin: 2px;
+}
+
+#eatenlist li {
+    margin: 0;
+    padding: 1px;
+    font-size: x-small;
+    color: dimgray;
+    border-style: solid;
+    border-width: 1px;
+    height: 25px;
 }
 
 .devour {

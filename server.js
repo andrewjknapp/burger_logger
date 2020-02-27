@@ -15,6 +15,7 @@ app.use(express.json());
 app.use(express.static('public'))
 
 app.get('/', async function(req, res) {
+    
     let burgers = {
         before: await db.query("SELECT id, type FROM burgers WHERE status = 'pending'"),
         after: await db.query("SELECT id, type FROM burgers WHERE status = 'eaten';")
@@ -32,9 +33,11 @@ app.post('/add', function(req, res) {
 
 })
 
-app.post('/devour/:id', function(req, res) {
-    console.log(req.params.id);
-    res.redirect('/');
+app.put('/devour/:id', function(req, res) {
+    db.query("UPDATE burgers SET status = 'eaten' WHERE id = ?;", req.params.id, function(err, result) {
+        if(err) throw err;
+        res.status(200).end();
+    })
 })
 
 app.listen(PORT, function(err) {
