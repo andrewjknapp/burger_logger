@@ -1,0 +1,75 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #FFCA60;
+}
+
+#burger {
+    font-size: 13em;
+    margin: 0 auto;
+    width: fit-content;
+}
+#heading {
+    margin: 0 auto;
+    width: fit-content;
+    color: #fd000d;
+}
+
+main {
+    width: 80%;
+    margin: 0 auto;
+}
+
+#ordered, #eaten {
+    column-span: 1;
+    min-height: 30px;
+    width: 49.2%;
+    display: inline-block;
+    background-color: darkred;
+    height: fit-content;
+}
+
+#orderlist, #eatenlist {
+    position: absolute;
+    list-style: none;
+    padding: 10px;
+    width: 38.95%;
+    background-color: darksalmon;
+}
+
+.devour {
+    float: right;
+    
+}
+
+li {
+    width: 100%;
+    background-color: rgb(231, 231, 231);
+    text-align: center;
+    padding: 5px;
+}
+
+#burgerInput {
+    display: block;
+    margin: 10px auto;
+    height: 50px;
+}
+
+#inputSubmit {
+    display: block;
+    margin: 0 auto;
+    padding: 5px;
+    background-color: cornflowerblue;
+    border-style: none;
+    color: white;
+
+}
+
+#burgerText {
+    margin: 0 auto;
+    width: fit-content;
+}
