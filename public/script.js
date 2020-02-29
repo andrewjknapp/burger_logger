@@ -1,7 +1,7 @@
 $('#orderlist').on('click', function(event) {
     if(event.target.matches('button')) {
         let id = event.target.getAttribute('identifier');
-        $.ajax("/devour/" + id, {
+        $.ajax("/api/burger/" + id, {
           type: "PUT"
         }).then(
           function() {
@@ -11,4 +11,15 @@ $('#orderlist').on('click', function(event) {
           }
         );
     }
+})
+
+$('#burgerClear').on("click", function(event) {
+  $.ajax("/api/burger", {
+    type: "DELETE"
+  }).then(
+    function() {
+      console.log("Deleted Eaten Column");
+      location.reload();
+    }
+  )
 })
