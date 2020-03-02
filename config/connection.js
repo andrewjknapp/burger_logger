@@ -3,7 +3,7 @@ const util = require('util');
 
 let db;
 
-if (process.env.JAWSBD_URL) {
+if (process.env.JAWSDB_URL) {
   db = mysql.createConnection(process.env.JAWSDB_URL);
 } else {
   db= mysql.createConnection({
